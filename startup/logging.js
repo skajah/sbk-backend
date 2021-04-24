@@ -23,7 +23,7 @@ module.exports = function () {
   );
   winston.add(
     new winston.transports.MongoDB({
-      db: config.get('dbConnectionString'),
+      db: config.get('db'),
       handleExceptions: true,
       handleRejections: true,
     })
