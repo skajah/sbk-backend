@@ -1,3 +1,4 @@
 {
-    "jwtPrivateKey":  "sbk_jwtPrivateKey"
+    "jwtPrivateKey":  "sbk_jwtPrivateKey",
+    "db": "sbk_db"
 }

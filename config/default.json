@@ -1,4 +1,4 @@
 {
     "jwtPrivateKey":  "",
-    "dbConnectionString": "mongodb://localhost/sbk"
+    "db": "mongodb://localhost/sbk"
 }

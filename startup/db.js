@@ -4,6 +4,6 @@ const config = require('config');
 
 module.exports = function () {
   mongoose
-    .connect(config.get('dbConnectionString'))
+    .connect(config.get('db'))
     .then(() => winston.info('Connected to "post-app" db...'));
 };
