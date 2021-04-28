@@ -120,8 +120,7 @@ async function filterByDateRange(start, end, maxDate, limit) {
     .sort('-date');
 }
 
-async function filterByDaysAgo(days, maxDate, limit) {
-  const now = new Date();
+async function filterByDaysAgo(days, maxDate, limit, now) {
   now.setHours(0, 0, 0, 0);
   const start = new Date(now);
 
@@ -176,7 +175,7 @@ async function filterByFollowing(userId, maxDate, limit) {
     .sort('-date');
 }
 
-async function filterPosts(filter, filterData, maxDate, limit) {
+async function filterPosts(filter, filterData, maxDate, limit, now) {
   const result = {};
 
   if (!filter) {
@@ -225,7 +224,7 @@ async function filterPosts(filter, filterData, maxDate, limit) {
       result.error = '"filterData" must an integer >= 0';
       return result;
     }
-    result.value = await filterByDaysAgo(days, maxDate, limit);
+    result.value = await filterByDaysAgo(days, maxDate, limit, now);
   } else if (filter === 'dateRange') {
     const parts = filterData.split(',');
     if (parts.length !== 2) {

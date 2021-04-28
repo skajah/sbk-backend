@@ -14,11 +14,15 @@ const router = express.Router();
 
 router.get('/', pagination, async (req, res) => {
   const { filter, filterData, maxDate, limit } = req.query;
+  let { now } = req.query;
+  now = new Date(now);
+  if (now.toString() === 'Invalid Date') now = new Date();
   const { error, value: posts } = await filterPosts(
     filter,
     filterData,
     maxDate,
-    limit
+    limit,
+    now
   );
   if (error) return res.status(400).send(error);
 
