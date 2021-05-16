@@ -1,1 +1,1 @@
-# sbk-backend
+# Use "master" branch
